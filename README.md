@@ -206,6 +206,3 @@ Todos los campos de entrada implementan validacion tanto a nivel de UI como en l
 Las versiones estan centralizadas en `gradle/libs.versions.toml` y se referencian mediante el catalogo de versiones de Gradle (version catalog).
 
 ---
-
-**Autor**: *Completar con nombre del autor*
-**Licencia**: *Completar con tipo de licencia*
