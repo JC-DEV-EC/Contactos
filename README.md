@@ -1,4 +1,4 @@
-# ContactHub
+# Contactos
 
 Aplicacion movil Android para la gestion de contactos personales. Desarrollada con Kotlin, Jetpack Compose y arquitectura limpia (Clean Architecture), permite crear, editar, eliminar y visualizar contactos de forma local con persistencia en base de datos Room.
 
