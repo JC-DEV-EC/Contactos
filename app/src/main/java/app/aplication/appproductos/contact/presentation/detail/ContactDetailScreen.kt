@@ -80,7 +80,10 @@ fun ContactDetailScreen(
                     label = { Text("Nombre completo *") },
                     leadingIcon = { Icon(Icons.Default.Person, null) },
                     isError = state.nameError != null,
-                    supportingText = state.nameError?.let { { Text(it) } },
+                    supportingText = {
+                        if (state.nameError != null) Text(state.nameError!!)
+                        else Text("${state.name.length}/50 — Solo letras y espacios")
+                    },
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true,
                     shape = RoundedCornerShape(12.dp)
@@ -116,7 +119,10 @@ fun ContactDetailScreen(
                     label = { Text("Teléfono") },
                     leadingIcon = { Icon(Icons.Default.Phone, null) },
                     isError = state.phoneError != null,
-                    supportingText = state.phoneError?.let { { Text(it) } },
+                    supportingText = {
+                        if (state.phoneError != null) Text(state.phoneError!!)
+                        else Text("${state.phone.length}/10 — Solo dígitos")
+                    },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true,
@@ -138,6 +144,7 @@ fun ContactDetailScreen(
                     onValueChange = viewModel::onNotesChange,
                     label = { Text("Notas") },
                     leadingIcon = { Icon(Icons.AutoMirrored.Filled.Notes, null) },
+                    supportingText = { Text("${state.notes.length}/300") },
                     modifier = Modifier.fillMaxWidth(),
                     minLines = 3,
                     maxLines = 5,
